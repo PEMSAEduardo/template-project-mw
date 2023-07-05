@@ -1,6 +1,6 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
-import type { GroupEventsResponse as _events_GroupEventsResponse, GroupEventsResponse__Output as _events_GroupEventsResponse__Output } from './GroupEventsResponse';
+import type { GroupEventsResponse as _events_GroupEventsResponse, GroupEventsResponse__Output as _events_GroupEventsResponse__Output } from '../events/GroupEventsResponse';
 
 export interface GroupsEventsResponse {
   'data'?: (_events_GroupEventsResponse)[];

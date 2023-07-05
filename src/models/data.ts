@@ -3,6 +3,8 @@ import { AccountRequest } from "../services/interfaces/accounts/AccountRequest";
 import { AccountsRequest } from "../services/interfaces/accounts/AccountsRequest";
 import { AccountsResponse__Output } from "../services/interfaces/accounts/AccountsResponse";
 import { DbServiceClient } from "../services/interfaces/db/DbService";
+import { EmptyRequest } from "../services/interfaces/db/EmptyRequest";
+import { ResponseTest__Output } from "../services/interfaces/db/ResponseTest";
 import { AccountsEventResponse__Output } from "../services/interfaces/events/AccountsEventResponse";
 import { AccountsLastEventResponse__Output } from "../services/interfaces/events/AccountsLastEventResponse";
 import { EventWOAccountResponse__Output } from "../services/interfaces/events/EventWOAccountResponse";
@@ -29,7 +31,24 @@ export class Data{
     searchGroups(query: SearchRequestGroup){
         return new Promise<ResponseGroups__Output>((resolve, reject) => {
             this.client.searchGroups(query, (err, data) => {
-                if (err) return reject(this.hanldeError(err));
+                if (err) {
+                    console.log(err);
+                    
+                    return reject(this.hanldeError(err));
+                }
+                return resolve(data!);
+            })
+        });
+    }
+
+    testService(query: EmptyRequest){
+        return new Promise<ResponseTest__Output>((resolve, reject) => {
+            this.client.test(query, (err, data) => {
+                if (err) {
+                    console.log(err);
+
+                    return reject(this.hanldeError(err));
+                }
                 return resolve(data!);
             })
         });

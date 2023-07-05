@@ -6,10 +6,11 @@
   "scripts": {
     "copy-protos": "node -e \"const fs = require('fs'); const path = require('path'); fs.readdirSync('./src/services').forEach(file => { if (path.extname(file) === '.proto') fs.copyFileSync(path.join('./src/services', file), path.join('./dist/services', file)); })\"",
     "copy-dist": "node -e \"const fs = require('fs'); fs.copyFileSync('.env', 'dist/.env')\"",
+    "copy-certs": "cp -R src/certs dist/",
     "build": "tsc",
     "tsc-w": "tsc -w",
     "watch": "nodemon dist/app.js",
-    "dev": "run-p tsc-w copy-dist copy-protos watch"
+    "dev": "run-p tsc-w copy-dist copy-certs copy-protos watch"
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",

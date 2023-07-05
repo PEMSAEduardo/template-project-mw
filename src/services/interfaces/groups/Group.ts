@@ -1,4 +1,4 @@
-// Original file: services/groups.proto
+// Original file: proto/groups.proto
 
 import type { Account as _accounts_Account, Account__Output as _accounts_Account__Output } from '../accounts/Account';
 

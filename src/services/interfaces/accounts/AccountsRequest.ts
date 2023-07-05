@@ -1,6 +1,6 @@
-// Original file: services/accounts.proto
+// Original file: proto/accounts.proto
 
-import type { StateAccount as _accounts_StateAccount, StateAccount__Output as _accounts_StateAccount__Output } from './StateAccount';
+import type { StateAccount as _accounts_StateAccount } from '../accounts/StateAccount';
 
 export interface AccountsRequest {
   'accounts'?: (number)[];
@@ -14,7 +14,7 @@ export interface AccountsRequest {
   'includeDeviceZone'?: (boolean);
   'includeEmail'?: (boolean);
   'includeSchedule'?: (boolean);
-  'state'?: (_accounts_StateAccount);
+  'state'?: (_accounts_StateAccount | keyof typeof _accounts_StateAccount);
 }
 
 export interface AccountsRequest__Output {
@@ -29,5 +29,5 @@ export interface AccountsRequest__Output {
   'includeDeviceZone'?: (boolean);
   'includeEmail'?: (boolean);
   'includeSchedule'?: (boolean);
-  'state'?: (_accounts_StateAccount__Output);
+  'state'?: (_accounts_StateAccount);
 }

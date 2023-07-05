@@ -1,4 +1,4 @@
-// Original file: services/accounts.proto
+// Original file: proto/accounts.proto
 
 
 export interface Schedule {

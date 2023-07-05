@@ -1,6 +1,6 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
-import type { LastEventoResponse as _events_LastEventoResponse, LastEventoResponse__Output as _events_LastEventoResponse__Output } from './LastEventoResponse';
+import type { LastEventoResponse as _events_LastEventoResponse, LastEventoResponse__Output as _events_LastEventoResponse__Output } from '../events/LastEventoResponse';
 
 export interface AccountLastEventResponse {
   'Nombre'?: (string);

@@ -1,4 +1,4 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
 
 export interface LastEventoResponse {

@@ -1,13 +1,13 @@
-// Original file: services/accounts.proto
+// Original file: proto/accounts.proto
 
-import type { Panel as _accounts_Panel, Panel__Output as _accounts_Panel__Output } from './Panel';
-import type { Partition as _accounts_Partition, Partition__Output as _accounts_Partition__Output } from './Partition';
-import type { Zone as _accounts_Zone, Zone__Output as _accounts_Zone__Output } from './Zone';
-import type { User as _accounts_User, User__Output as _accounts_User__Output } from './User';
-import type { Contact as _accounts_Contact, Contact__Output as _accounts_Contact__Output } from './Contact';
-import type { GeneralData as _accounts_GeneralData, GeneralData__Output as _accounts_GeneralData__Output } from './GeneralData';
-import type { Security as _accounts_Security, Security__Output as _accounts_Security__Output } from './Security';
-import type { Schedule as _accounts_Schedule, Schedule__Output as _accounts_Schedule__Output } from './Schedule';
+import type { Panel as _accounts_Panel, Panel__Output as _accounts_Panel__Output } from '../accounts/Panel';
+import type { Partition as _accounts_Partition, Partition__Output as _accounts_Partition__Output } from '../accounts/Partition';
+import type { Zone as _accounts_Zone, Zone__Output as _accounts_Zone__Output } from '../accounts/Zone';
+import type { User as _accounts_User, User__Output as _accounts_User__Output } from '../accounts/User';
+import type { Contact as _accounts_Contact, Contact__Output as _accounts_Contact__Output } from '../accounts/Contact';
+import type { GeneralData as _accounts_GeneralData, GeneralData__Output as _accounts_GeneralData__Output } from '../accounts/GeneralData';
+import type { Security as _accounts_Security, Security__Output as _accounts_Security__Output } from '../accounts/Security';
+import type { Schedule as _accounts_Schedule, Schedule__Output as _accounts_Schedule__Output } from '../accounts/Schedule';
 
 export interface Account {
   'CodigoCte'?: (string);

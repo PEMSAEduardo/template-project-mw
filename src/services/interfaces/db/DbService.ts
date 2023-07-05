@@ -1,4 +1,4 @@
-// Original file: services/main.proto
+// Original file: proto/main.proto
 
 import type * as grpc from '@grpc/grpc-js'
 import type { MethodDefinition } from '@grpc/proto-loader'
@@ -8,6 +8,7 @@ import type { AccountsEventResponse as _events_AccountsEventResponse, AccountsEv
 import type { AccountsLastEventResponse as _events_AccountsLastEventResponse, AccountsLastEventResponse__Output as _events_AccountsLastEventResponse__Output } from '../events/AccountsLastEventResponse';
 import type { AccountsRequest as _accounts_AccountsRequest, AccountsRequest__Output as _accounts_AccountsRequest__Output } from '../accounts/AccountsRequest';
 import type { AccountsResponse as _accounts_AccountsResponse, AccountsResponse__Output as _accounts_AccountsResponse__Output } from '../accounts/AccountsResponse';
+import type { EmptyRequest as _db_EmptyRequest, EmptyRequest__Output as _db_EmptyRequest__Output } from '../db/EmptyRequest';
 import type { EventWOAccountResponse as _events_EventWOAccountResponse, EventWOAccountResponse__Output as _events_EventWOAccountResponse__Output } from '../events/EventWOAccountResponse';
 import type { EventsGrouprequest as _events_EventsGrouprequest, EventsGrouprequest__Output as _events_EventsGrouprequest__Output } from '../events/EventsGrouprequest';
 import type { EventsRequest as _events_EventsRequest, EventsRequest__Output as _events_EventsRequest__Output } from '../events/EventsRequest';
@@ -19,6 +20,7 @@ import type { GroupsLastEventResponse as _events_GroupsLastEventResponse, Groups
 import type { LastEventGroupRequest as _events_LastEventGroupRequest, LastEventGroupRequest__Output as _events_LastEventGroupRequest__Output } from '../events/LastEventGroupRequest';
 import type { LastEventRequest as _events_LastEventRequest, LastEventRequest__Output as _events_LastEventRequest__Output } from '../events/LastEventRequest';
 import type { ResponseGroups as _groups_ResponseGroups, ResponseGroups__Output as _groups_ResponseGroups__Output } from '../groups/ResponseGroups';
+import type { ResponseTest as _db_ResponseTest, ResponseTest__Output as _db_ResponseTest__Output } from '../db/ResponseTest';
 import type { SearchRequestGroup as _groups_SearchRequestGroup, SearchRequestGroup__Output as _groups_SearchRequestGroup__Output } from '../groups/SearchRequestGroup';
 
 export interface DbServiceClient extends grpc.Client {
@@ -103,6 +105,15 @@ export interface DbServiceClient extends grpc.Client {
   searchGroups(argument: _groups_SearchRequestGroup, options: grpc.CallOptions, callback: grpc.requestCallback<_groups_ResponseGroups__Output>): grpc.ClientUnaryCall;
   searchGroups(argument: _groups_SearchRequestGroup, callback: grpc.requestCallback<_groups_ResponseGroups__Output>): grpc.ClientUnaryCall;
   
+  Test(argument: _db_EmptyRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  Test(argument: _db_EmptyRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  Test(argument: _db_EmptyRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  Test(argument: _db_EmptyRequest, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  test(argument: _db_EmptyRequest, metadata: grpc.Metadata, options: grpc.CallOptions, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  test(argument: _db_EmptyRequest, metadata: grpc.Metadata, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  test(argument: _db_EmptyRequest, options: grpc.CallOptions, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  test(argument: _db_EmptyRequest, callback: grpc.requestCallback<_db_ResponseTest__Output>): grpc.ClientUnaryCall;
+  
 }
 
 export interface DbServiceHandlers extends grpc.UntypedServiceImplementation {
@@ -124,6 +135,8 @@ export interface DbServiceHandlers extends grpc.UntypedServiceImplementation {
   
   SearchGroups: grpc.handleUnaryCall<_groups_SearchRequestGroup__Output, _groups_ResponseGroups>;
   
+  Test: grpc.handleUnaryCall<_db_EmptyRequest__Output, _db_ResponseTest>;
+  
 }
 
 export interface DbServiceDefinition extends grpc.ServiceDefinition {
@@ -136,4 +149,5 @@ export interface DbServiceDefinition extends grpc.ServiceDefinition {
   GetLastEventFromGroup: MethodDefinition<_events_LastEventGroupRequest, _events_GroupsLastEventResponse, _events_LastEventGroupRequest__Output, _events_GroupsLastEventResponse__Output>
   SearchAccounts: MethodDefinition<_accounts_AccountsRequest, _accounts_AccountsResponse, _accounts_AccountsRequest__Output, _accounts_AccountsResponse__Output>
   SearchGroups: MethodDefinition<_groups_SearchRequestGroup, _groups_ResponseGroups, _groups_SearchRequestGroup__Output, _groups_ResponseGroups__Output>
+  Test: MethodDefinition<_db_EmptyRequest, _db_ResponseTest, _db_EmptyRequest__Output, _db_ResponseTest__Output>
 }

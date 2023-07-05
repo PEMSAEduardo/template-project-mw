@@ -1,13 +1,13 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
-import type { TypeCode as _events_TypeCode, TypeCode__Output as _events_TypeCode__Output } from './TypeCode';
+import type { TypeCode as _events_TypeCode } from '../events/TypeCode';
 
 export interface FilterEvents {
   'code'?: (string);
-  'type'?: (_events_TypeCode);
+  'type'?: (_events_TypeCode | keyof typeof _events_TypeCode);
 }
 
 export interface FilterEvents__Output {
   'code'?: (string);
-  'type'?: (_events_TypeCode__Output);
+  'type'?: (_events_TypeCode);
 }

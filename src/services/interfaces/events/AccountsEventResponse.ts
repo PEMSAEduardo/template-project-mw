@@ -1,6 +1,6 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
-import type { AccountEventResponse as _events_AccountEventResponse, AccountEventResponse__Output as _events_AccountEventResponse__Output } from './AccountEventResponse';
+import type { AccountEventResponse as _events_AccountEventResponse, AccountEventResponse__Output as _events_AccountEventResponse__Output } from '../events/AccountEventResponse';
 
 export interface AccountsEventResponse {
   'data'?: (_events_AccountEventResponse)[];

@@ -1,7 +1,7 @@
-// Original file: services/groups.proto
+// Original file: proto/groups.proto
 
-import type { GroupRequest as _groups_GroupRequest, GroupRequest__Output as _groups_GroupRequest__Output } from './GroupRequest';
-import type { StateAccount as _accounts_StateAccount, StateAccount__Output as _accounts_StateAccount__Output } from '../accounts/StateAccount';
+import type { GroupRequest as _groups_GroupRequest, GroupRequest__Output as _groups_GroupRequest__Output } from '../groups/GroupRequest';
+import type { StateAccount as _accounts_StateAccount } from '../accounts/StateAccount';
 
 export interface GroupRequestFilter {
   'group'?: (_groups_GroupRequest | null);
@@ -16,7 +16,7 @@ export interface GroupRequestFilter {
   'includeDeviceZone'?: (boolean);
   'includeEmail'?: (boolean);
   'includeSchedule'?: (boolean);
-  'state'?: (_accounts_StateAccount);
+  'state'?: (_accounts_StateAccount | keyof typeof _accounts_StateAccount);
 }
 
 export interface GroupRequestFilter__Output {
@@ -32,5 +32,5 @@ export interface GroupRequestFilter__Output {
   'includeDeviceZone'?: (boolean);
   'includeEmail'?: (boolean);
   'includeSchedule'?: (boolean);
-  'state'?: (_accounts_StateAccount__Output);
+  'state'?: (_accounts_StateAccount);
 }

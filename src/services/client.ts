@@ -3,6 +3,7 @@ import { loadPackageDefinition, credentials } from '@grpc/grpc-js';
 import * as protoLoader from '@grpc/proto-loader';
 import { ProtoGrpcType } from './interfaces/main';
 import { DbServiceClient } from './interfaces/db/DbService';
+import {readFileSync} from 'fs'
 
 
 export class Client {
@@ -13,14 +14,19 @@ export class Client {
     private client: DbServiceClient;
 
     constructor(address: string) {
+        
         const packageDefinition = protoLoader.loadSync(this.FILES.map(file => path.resolve(__dirname, file)));
         this.grpcObj = loadPackageDefinition(packageDefinition) as unknown as ProtoGrpcType;
         
+        const credentialsToConnect = credentials.createSsl(
+            readFileSync(path.join(__dirname,'../certs/ca.crt')),
+            readFileSync(path.join(__dirname,'../certs/client.key')),
+            readFileSync(path.join(__dirname,'../certs/client.crt'))
+        );
         
+
     
-        this.client = new this.grpcObj.db.DbService(address, credentials.createInsecure(), {
-            'grpc.max_receive_message_length': 512 * 1024 * 1024,
-        });
+        this.client = new this.grpcObj.db.DbService(address, credentialsToConnect);
     }
     
     get getClient(){

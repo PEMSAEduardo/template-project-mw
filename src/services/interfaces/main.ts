@@ -25,6 +25,8 @@ export interface ProtoGrpcType {
   }
   db: {
     DbService: SubtypeConstructor<typeof grpc.Client, _db_DbServiceClient> & { service: _db_DbServiceDefinition }
+    EmptyRequest: MessageTypeDefinition
+    ResponseTest: MessageTypeDefinition
   }
   events: {
     AccountEventResponse: MessageTypeDefinition

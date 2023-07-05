@@ -1,7 +1,7 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
-import type { EventoResponse as _events_EventoResponse, EventoResponse__Output as _events_EventoResponse__Output } from './EventoResponse';
-import type { CommentResponse as _events_CommentResponse, CommentResponse__Output as _events_CommentResponse__Output } from './CommentResponse';
+import type { EventoResponse as _events_EventoResponse, EventoResponse__Output as _events_EventoResponse__Output } from '../events/EventoResponse';
+import type { CommentResponse as _events_CommentResponse, CommentResponse__Output as _events_CommentResponse__Output } from '../events/CommentResponse';
 import type { Schedule as _accounts_Schedule, Schedule__Output as _accounts_Schedule__Output } from '../accounts/Schedule';
 
 export interface AccountEventResponse {

@@ -1,11 +1,11 @@
-// Original file: services/events.proto
+// Original file: proto/events.proto
 
-import type { StateAccount as _accounts_StateAccount, StateAccount__Output as _accounts_StateAccount__Output } from '../accounts/StateAccount';
-import type { FilterEvents as _events_FilterEvents, FilterEvents__Output as _events_FilterEvents__Output } from './FilterEvents';
+import type { StateAccount as _accounts_StateAccount } from '../accounts/StateAccount';
+import type { FilterEvents as _events_FilterEvents, FilterEvents__Output as _events_FilterEvents__Output } from '../events/FilterEvents';
 
 export interface LastEventRequest {
   'accounts'?: (number)[];
-  'state'?: (_accounts_StateAccount);
+  'state'?: (_accounts_StateAccount | keyof typeof _accounts_StateAccount);
   'filterIsExclude'?: (boolean);
   'separatePartitions'?: (boolean);
   'filters'?: (_events_FilterEvents)[];
@@ -17,7 +17,7 @@ export interface LastEventRequest {
 
 export interface LastEventRequest__Output {
   'accounts'?: (number)[];
-  'state'?: (_accounts_StateAccount__Output);
+  'state'?: (_accounts_StateAccount);
   'filterIsExclude'?: (boolean);
   'separatePartitions'?: (boolean);
   'filters'?: (_events_FilterEvents__Output)[];
