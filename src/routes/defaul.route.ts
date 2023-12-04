@@ -1,6 +1,7 @@
 import { Router } from "express"
-import { DbServiceClient } from '../services/interfaces/db/DbService';
+
 import { DefaultController } from "../controllers/default.controller";
+import { DbServiceClient } from "../services/db/DbService";
 
 export class DefaultRouter {
     private router:Router;

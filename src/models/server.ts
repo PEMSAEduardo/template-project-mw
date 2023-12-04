@@ -1,8 +1,9 @@
 import express, {Application} from 'express';
 import cors from 'cors';
-import { Client } from '../services/client';
+// import { Client } from '../services/client';
 import { DefaultRouter } from '../routes/defaul.route';
 import config from '../config/config';
+import { Client } from '../services/client';
 
 export default class Server {
     private app: Application;

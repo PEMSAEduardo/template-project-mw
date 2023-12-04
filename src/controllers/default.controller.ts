@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { DbServiceClient } from "../services/interfaces/db/DbService";
+
 import { Data } from "../models/data";
+import { DbServiceClient } from "../services/db/DbService";
 
 export class DefaultController extends Data {
 
@@ -11,20 +12,21 @@ export class DefaultController extends Data {
 
     async test(req: Request, res: Response) {
         try {
-            const data = await this.searchGroups({
-                groups: [{ id: 98, type: "Grupo" }],
-                includeAccounts: true,
-                includeContacts: true,
-                includeDeviceZone: true,
-                includeEmail: true,
-                includeGeneralData: true,
-                includePanel: true,
-                includePartitions: true,
-                includeSchedule: true,
-                includeSecurity: true,
-                includeUsers: true,
-                includeZones: true,
-            });
+            const data = await this.getCatalogueAlarms({});
+            // const data = await this.searchGroups({
+            //     groups: [{ id: 98, type: "Grupo" }],
+            //     includeAccounts: true,
+            //     includeContacts: true,
+            //     includeDeviceZone: true,
+            //     includeEmail: true,
+            //     includeGeneralData: true,
+            //     includePanel: true,
+            //     includePartitions: true,
+            //     includeSchedule: true,
+            //     includeSecurity: true,
+            //     includeUsers: true,
+            //     includeZones: true,
+            // });
             res.json({
                 ...data
             })

@@ -8,20 +8,6 @@ enum TypeGroup {
     Dealer = 3;
 }
 
-// Requests
-// message GroupsRequestFilter{
-//     bool includeAccounts = 1;
-//     bool includeZones = 2;
-//     bool includePartitions = 3;
-//     bool includeUsers = 4;
-//     bool includeContacts = 5;
-//     bool includePanel = 6;
-//     bool includeSecurity = 7;
-//     bool includeGeneralData = 8;
-//     bool includeDeviceZone = 9;
-//     bool includeEmail = 10;
-//     StateAccount state = 11;
-// }
 
 message GroupRequestFilter{
     GroupRequest group = 1;
@@ -60,7 +46,6 @@ message GroupRequest{
     TypeGroup type = 2;
 }
 
-// Respuestas 
 message Group {
     int32 Codigo = 1;
     string Nombre = 2;

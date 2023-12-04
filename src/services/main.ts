@@ -1,7 +1,7 @@
 import type * as grpc from '@grpc/grpc-js';
 import type { EnumTypeDefinition, MessageTypeDefinition } from '@grpc/proto-loader';
 
-import type { DbServiceClient as _db_DbServiceClient, DbServiceDefinition as _db_DbServiceDefinition } from './interfaces/db/DbService';
+import type { DbServiceClient as _db_DbServiceClient, DbServiceDefinition as _db_DbServiceDefinition } from './db/DbService';
 
 type SubtypeConstructor<Constructor extends new (...args: any) => any, Subtype> = {
   new(...args: ConstructorParameters<Constructor>): Subtype;
@@ -22,6 +22,12 @@ export interface ProtoGrpcType {
     StateAccount: EnumTypeDefinition
     User: MessageTypeDefinition
     Zone: MessageTypeDefinition
+  }
+  catalogue: {
+    AlarmCAT: MessageTypeDefinition
+    EventCAT: MessageTypeDefinition
+    ResponseAlarms: MessageTypeDefinition
+    ResponseEvents: MessageTypeDefinition
   }
   db: {
     DbService: SubtypeConstructor<typeof grpc.Client, _db_DbServiceClient> & { service: _db_DbServiceDefinition }
